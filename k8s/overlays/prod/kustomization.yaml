@@ -6,3 +6,13 @@ bases:
 
 patchesStrategicMerge:
 - custom-env.yaml
+
+configMapGenerator:
+- name: example-configmap-1
+  files:
+  - application.properties
+
+secretGenerator:
+- name: example-secret-1
+  files:
+  - password.txt
