@@ -51,7 +51,7 @@ vi k8s/overlays/prod/password.txt
 vi k8s/overlays/prod/kustomization.yaml # secretGenerator
 ```
 
-Resources:
+## Resources:
 
 * https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/
 * https://blog.stack-labs.com/code/kustomize-101/
