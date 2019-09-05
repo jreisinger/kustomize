@@ -6,18 +6,18 @@
 
 ## Basic commands
 
-view resources:
-
 ```
+# view resources
 kubectl kustomize k8s/base
 kubectl kustomize k8s/overlays/prod
-```
 
-apply resource:
-
-```
+# apply resource:
 kubectl apply -k k8s/base
 kubectl apply -k k8s/overlays/prod
+
+# delete resource:
+kubectl delete -k k8s/base
+kubectl delete -k k8s/overlays/prod
 ```
 
 ## Basic workflow
@@ -49,6 +49,22 @@ secretGenerator
 ```
 vi k8s/overlays/prod/password.txt
 vi k8s/overlays/prod/kustomization.yaml # secretGenerator
+```
+
+## Cross-cutting fields
+
+You can add fields into kustomization.yaml that will be applied to all resources, e.g.:
+
+```
+namespace: my-namespace
+namePrefix: dev-
+nameSuffix: "-001"
+commonLabels:
+  project: manhattan
+commonAnnotations:
+  oncallPager: 800-555-1212
+resources:
+- deployment.yaml
 ```
 
 ## Resources:
