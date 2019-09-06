@@ -71,3 +71,4 @@ resources:
 
 * https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/
 * https://blog.stack-labs.com/code/kustomize-101/
+* https://kubectl.docs.kubernetes.io/pages/reference/kustomize.html
