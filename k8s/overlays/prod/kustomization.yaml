@@ -4,6 +4,8 @@ kind: Kustomization
 bases:
 - ../../base
 
+# The names inside the patches must match Resource names that are already
+# loaded. Small patches that do one thing are recommended.
 patchesStrategicMerge:
 - custom-env.yaml
 
