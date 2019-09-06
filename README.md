@@ -4,6 +4,21 @@
 * included in `kubectl` >= 1.14
 * similar to Docker layers
 
+## Basic workflow
+
+```
+# create base manifests
+mkdir k8s/base -p
+vi k8s/base/service.yaml
+vi k8s/base/deploy.yaml
+vi k8s/base/kustomization.yaml
+
+# add overlays to base
+mkdir k8s/overlays/prod -p
+vi k8s/overlays/prod/custom-env.yaml
+vi k8s/overlays/prod/kustomization.yaml
+```
+
 ## Basic commands
 
 ```
@@ -18,21 +33,6 @@ kubectl apply -k k8s/overlays/prod
 # delete resource:
 kubectl delete -k k8s/base
 kubectl delete -k k8s/overlays/prod
-```
-
-## Basic workflow
-
-```
-# create base manifests
-mkdir k8s/base -p
-vi k8s/base/service.yaml
-vi k8s/base/deploy.yaml
-vi k8s/base/kustomization.yaml
-
-# add overlays to base
-mkdir k8s/overlays/prod -p
-vi k8s/overlays/prod/custom-env.yaml
-vi k8s/overlays/prod/kustomization.yaml
 ```
 
 ## Generating resources
